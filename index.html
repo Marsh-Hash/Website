@@ -124,24 +124,22 @@
   <meta charset="UTF-8" />
   <title>Contact Section</title>
   <style>
-    /* Make sure body and html fill the viewport */
     html, body {
       margin: 0; padding: 0; height: 100%;
       font-family: Arial, sans-serif;
     }
 
     #contact {
-      background-image: url('picture1.jpg');
+      background-image: url('picture1.jpg'); /* Make sure this image exists in same folder */
       background-size: cover;
       background-position: center;
       padding: 40px 20px;
       color: white;
       position: relative;
-      min-height: 100vh; /* Make sure section fills screen height */
+      min-height: 100vh;
       box-sizing: border-box;
     }
 
-    /* Dark overlay so text is readable */
     #contact::before {
       content: "";
       position: absolute;
@@ -157,18 +155,8 @@
       margin: 0 auto;
     }
 
-    .fields {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
     .field {
-      flex: 1 1 100%;
-    }
-
-    .field.half {
-      flex: 1 1 45%;
+      margin-bottom: 20px;
     }
 
     input, textarea {
@@ -204,7 +192,6 @@
     .actions input:hover {
       background-color: #0056b3;
     }
-
   </style>
 </head>
 <body>
@@ -213,21 +200,9 @@
     <div class="inner">
       <section>
         <form method="post" action="#">
-          <div class="fields">
-            <div class="field half">
-              <label for="name">Your Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-
-            <div class="field half">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" />
-            </div>
-
-            <div class="field">
-              <label for="message">Send a Message, I'll reply (maybe)</label>
-              <textarea name="message" id="message" rows="6"></textarea>
-            </div>
+          <div class="field">
+            <label for="message">Send a Message, I'll reply (maybe)</label>
+            <textarea name="message" id="message" rows="6"></textarea>
           </div>
 
           <ul class="actions">
@@ -241,6 +216,7 @@
 
 </body>
 </html>
+
 	</div>
 				
 							</ul>
