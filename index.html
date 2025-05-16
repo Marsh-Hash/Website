@@ -118,105 +118,131 @@
 								</div>
 							</section>
 
-					</div>
 				<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact Section</title>
+  <meta charset="UTF-8" />
+  <title>Contact Section</title>
+  <style>
+    /* Make sure body and html fill the viewport */
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+    }
 
-    <style>
-       
-        #contact {
-            background-image: url('picture1.jpg'); 
-            background-size: cover;
-            background-position: center;
-            padding: 40px 20px;
-            color: white;
-            position: relative;
-        }
+    #contact {
+      background-image: url('picture1.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 20px;
+      color: white;
+      position: relative;
+      min-height: 100vh; /* Make sure section fills screen height */
+      box-sizing: border-box;
+    }
 
-        #contact::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* dark overlay */
-            z-index: 1;
-        }
+    /* Dark overlay so text is readable */
+    #contact::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
 
-        #contact .inner {
-            position: relative;
-            z-index: 2;
-        }
+    #contact .inner {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-        .fields {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    .fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        .field {
-            flex: 1 1 100%;
-        }
+    .field {
+      flex: 1 1 100%;
+    }
 
-        .field.half {
-            flex: 1 1 45%;
-        }
+    .field.half {
+      flex: 1 1 45%;
+    }
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
 
-        .actions {
-            margin-top: 20px;
-        }
+    .actions {
+      margin-top: 20px;
+    }
 
-        .actions input {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .actions input {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
 
-        
-        .name-with-image {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-    </style>
+    .actions input:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
 </head>
-
 <body>
-   
 
-                        <div class="field">
-                            <label for="message"> Send a Message,ill reply(maybe)</label>
-                            <textarea name="message" id="message" rows="6"></textarea>
-                        </div>
-                    </div>
+  <section id="contact">
+    <div class="inner">
+      <section>
+        <form method="post" action="#">
+          <div class="fields">
+            <div class="field half">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" id="name" />
+            </div>
 
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="primary" /></li>
-                        <li><input type="reset" value="Clear" /></li>
-                    </ul>
-                </form>
-            </section>
-        </div>
-    </section>
+            <div class="field half">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+
+            <div class="field">
+              <label for="message">Send a Message, I'll reply (maybe)</label>
+              <textarea name="message" id="message" rows="6"></textarea>
+            </div>
+          </div>
+
+          <ul class="actions">
+            <li><input type="submit" value="Send Message" class="primary" /></li>
+            <li><input type="reset" value="Clear" /></li>
+          </ul>
+        </form>
+      </section>
+    </div>
+  </section>
+
 </body>
 </html>
-
-
+	</div>
+				
 							</ul>
 						</div>
 					</footer>
